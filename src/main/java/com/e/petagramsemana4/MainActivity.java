@@ -49,19 +49,7 @@ public class MainActivity extends AppCompatActivity {
         tabLay.getTabAt(1).setIcon(R.drawable.icons_dog);
         aBar.setNavigationIcon(R.drawable.huella);
 
-try {
 
-
-        Bundle bund = getIntent().getExtras();
-          // String nom = bund.getString("nom");
-        //   int fot = bund.getInt("fot");
-           int vot = bund.getInt("vot");
-           int pos = bund.getInt("pos");
-
-        //   fotos.add(pos, fot);
-       //    nombres.add(pos, nom);
-           votos.add(pos, vot);
-}catch (Exception e){}
 }
 
 
@@ -85,51 +73,7 @@ try {
     }
 
 
-/*    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId()){
-
-            case R.id.star:
-
-                ArrayList<String> lista = (ArrayList<String>) getIntent().getSerializableExtra("Lista");
-                ArrayList<Integer> listaf = (ArrayList<Integer>) getIntent().getSerializableExtra("listaf");
-                ArrayList<Integer> votos = (ArrayList<Integer>) getIntent().getSerializableExtra("votos");
-                Intent datos = new Intent(this, Ranking.class);
-
-                Collections.sort(mascotas, new Comparator<Pets>() {
-                    @Override
-                    public int compare(Pets o1, Pets o2) {
-                        return new Integer(o2.getVotos()).compareTo(new Integer(o1.getVotos()));
-                    }
-                });
-
-                for(int i=0; i<mascotas.size(); i++){
-                    nombres.add(mascotas.get(i).getNombre());
-                    fotos.add(mascotas.get(i).getImagen());
-                    votos.add(mascotas.get(i).getVotos());
-                }
-
-                datos.putExtra("Lista", lista);
-                datos.putExtra("listaf", listaf);
-                datos.putExtra("votos", votos);
-                startActivity(datos);
-                break;
-
-            case R.id.about:
-                Intent intabout = new Intent(MainActivity.this, About.class);
-                startActivity(intabout);
-                break;
-
-            case R.id.contact:
-                Intent intconta = new Intent(MainActivity.this, Contacto.class);
-                startActivity(intconta);
-                break;
-
-        }
-
-        return super.onOptionsItemSelected(item);
-    }*/
 
 
 }

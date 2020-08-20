@@ -49,15 +49,10 @@ public class PetAdapter extends RecyclerView.Adapter<PetAdapter.PetViewHolder>  
             @Override
             public void onClick(View v) {
 
-                int i = mascota.getVotos();
-                mascota.setVotos(++i);
-                holder.votos.setText(String.valueOf(i));
-                Intent inte = new Intent(holder.votos.getContext(), MainActivity.class);
-                inte.putExtra("vot", i);
-                inte.putExtra("pos", position);
-                inte.putExtra("fot",mascota.getImagen());
-                inte.putExtra("nom", mascota.getNombre());
-                holder.votos.getContext().startActivity(inte);
+                mascota.setVotos(mascota.getVotos()+1);
+
+                holder.votos.setText(String.valueOf(mascota.getVotos()));
+
 
 
             }

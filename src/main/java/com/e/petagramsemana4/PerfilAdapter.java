@@ -43,8 +43,7 @@ public class PerfilAdapter extends RecyclerView.Adapter<PerfilAdapter.PerfilView
             @Override
             public void onClick(View v) {
                 Toast.makeText(holder.fotoP.getContext(), mascotaPerf.getNombre(), Toast.LENGTH_SHORT).show();
-               // holder.nombrePerfil.setText(mascotaPerf.getNombre());
-              //  holder.fotoPerfil.setImageResource(mascotaPerf.getImagen());
+
             }
         });
 

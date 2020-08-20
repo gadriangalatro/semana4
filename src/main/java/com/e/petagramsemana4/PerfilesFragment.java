@@ -47,33 +47,16 @@ public class PerfilesFragment extends Fragment {
         fotoPerf = view.findViewById(R.id.fotoPerf);
         descPerf = view.findViewById(R.id.descPerf);
         gridRec = view.findViewById(R.id.gridRec);
+
+        fotoPerf.setImageResource(R.drawable.perro6);
+        descPerf.setText("RunRun");
+
         GridLayoutManager glm = new GridLayoutManager(getContext(), 3);
 
         gridRec.setLayoutManager(glm);
 
-
-
-       Bundle bun = this.getArguments();
-       if (bun != null){
-
-        ArrayList<Integer> listVot = bun.getIntegerArrayList("vot");
-        ArrayList<String> nomList = bun.getStringArrayList("nom");
-        ArrayList<Integer>fotList = ((MainActivity)getActivity()).fotos;
-
-
-           for (int i =0; i<perfiList.size(); i++){
-               String nombre = nomList.get(i);
-               int foto = fotList.get(i);
-               int votos = listVot.get(i);
-               perfiList.add(new Pets(foto, nombre, votos));
-               Toast.makeText(getContext(), nomList.get(i),Toast.LENGTH_SHORT).show();
-
-           }
-           PerfilAdapter adaptador = new PerfilAdapter(perfiList);
-           gridRec.setAdapter(adaptador);
-
-
-       }
+        llenarRecycler();
+        iniciarAdapter();
 
         return view;
     }
@@ -113,11 +96,11 @@ public class PerfilesFragment extends Fragment {
     public void llenarRecycler(){
         perfiList = new ArrayList<>();
 
-        perfiList.add(new Pets(R.drawable.perro1, "Simón") );
-        perfiList.add(new Pets(R.drawable.perro2,"Lucas"));
-        perfiList.add(new Pets(R.drawable.perro3, "Chico"));
-        perfiList.add(new Pets(R.drawable.perro4, "Pirulo"));
-        perfiList.add(new Pets(R.drawable.perro5, "Cachin"));
-        perfiList.add(new Pets(R.drawable.perro6, "RunRun"));
+        perfiList.add(new Pets(R.drawable.perro1, "Simón",3) );
+        perfiList.add(new Pets(R.drawable.perro2,"Lucas",1));
+        perfiList.add(new Pets(R.drawable.perro3, "Chico",4));
+        perfiList.add(new Pets(R.drawable.perro4, "Pirulo",2));
+        perfiList.add(new Pets(R.drawable.perro5, "Cachin",0));
+        perfiList.add(new Pets(R.drawable.perro6, "RunRun",5));
     }
 }
